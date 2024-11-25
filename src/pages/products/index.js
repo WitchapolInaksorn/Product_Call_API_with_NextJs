@@ -16,13 +16,14 @@ export default function Product({ product }) {
                 className="min-h-screen justify-items-center p-5 
                 bg-white">
 
-                <p className="text-2xl font-bold mb-10 text-black"> Products </p>
+                <p className="text-2xl font-bold text-black "> Products </p>
+                <p className="text-2xl font-bold mb-10 text-black "> Owen Shop </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center">
 
                     {product.map((item) => (
                         <Link key={item.id}
                             href={`/products/${item.id}`}
-                            className="mix-blend-multiply">
+                            className="mix-blend-multiply ">
 
                             <div className="flex flex-col gap-3 items-center mt-3 ">
                                 <Image src={item.image}
