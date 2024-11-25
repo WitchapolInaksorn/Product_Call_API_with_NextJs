@@ -23,7 +23,7 @@ export default function Product({ product }) {
                     {product.map((item) => (
                         <Link key={item.id}
                             href={`/products/${item.id}`}
-                            className="mix-blend-multiply ">
+                            className="mix-blend-multiply border-dotted border-2 border-black w-[250px] h-[380px] mx-10 mb-5">
 
                             <div className="flex flex-col gap-3 items-center mt-3 ">
                                 <Image src={item.image}
@@ -35,7 +35,7 @@ export default function Product({ product }) {
 
                             </div>
                             <div>
-                                <p className="mx-3 mb-8 text-black font-bold"> Price : {item.price} </p>
+                                <p className="mx-3 text-black font-bold"> Price : {item.price} </p>
                             </div>
 
                         </Link>
