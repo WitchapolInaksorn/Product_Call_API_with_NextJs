@@ -1,8 +1,5 @@
 import Head from "next/head"
-import product1 from "../../../public/assets/images/gpro-image.webp"
-import Mycomponent from "@/components/component"
 import Image from "next/image"
-import { Component } from "react"
 import Link from "next/link"
 export default function Product({ product }) {
     console.log("---", product)
@@ -16,31 +13,34 @@ export default function Product({ product }) {
                 className="min-h-screen justify-items-center p-5 
                 bg-white">
 
-                <p className="text-2xl font-bold text-black "> Products </p>
-                <p className="text-2xl font-bold mb-10 text-black "> Owen Shop </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center">
-
+                <p className="text-2xl font-bold text-black mb-10"> Products </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
                     {product.map((item) => (
-                        <Link key={item.id}
+                        <Link
+                            key={item.id}
                             href={`/products/${item.id}`}
-                            className="mix-blend-multiply border-dotted border-2 border-black w-[250px] h-[380px] mx-10 mb-5">
-
-                            <div className="flex flex-col gap-3 items-center mt-3 ">
-                                <Image src={item.image}
-                                width={"180"}
-                                height={"200"}
-                                    alt="G-Pro Image"
-                                    className="w-[180px] h-[220px] mx-3 justify-self-center hover:scale-105" />
-                                <p className="mt-3 mx-3 text-black font-bold"> {item.title} </p>
-
+                            className="mx-8 flex flex-col items-center justify-between bg-white bg-opacity-90 p-4 rounded-lg shadow-md transition-all w-[250px] h-[420px]"
+                        >
+                            <Image
+                                src={item.image}
+                                width={150}
+                                height={180}
+                                alt={item.title}
+                                className="object-contain hover:scale-105 transition-transform"
+                            />
+                            <div className="flex flex-col items-center mt-3">
+                                <p className="text-center text-lg font-semibold text-gray-800 h-[60px] overflow-hidden">
+                                    {item.title}
+                                </p>
+                                <p className="text-center text-md font-bold text-green-600 mt-2">
+                                    Price: ${item.price}
+                                </p>
                             </div>
-                            <div>
-                                <p className="mx-3 text-black font-bold"> Price : {item.price} </p>
-                            </div>
-
                         </Link>
                     ))}
                 </div>
+
+
             </div>
 
         </div>
